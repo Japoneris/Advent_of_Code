@@ -1,0 +1,354 @@
+inp w (input0, 0, 0, 0)
+mul x 0 (input0, 0, 0, 0)
+add x z (input0, 0, 0, 0)
+mod x 26 (input0, 0, 0, 0)
+div z 1 (input0, 0, 0, 0)
+add x 11 (input0, 11, 0, 0)
+eql x w (input0, 0, 0, 0)
+eql x 0 (input0, 1, 0, 0)
+mul y 0 (input0, 1, 0, 0)
+add y 25 (input0, 1, 25, 0)
+mul y x (input0, 1, 25, 0)
+add y 1 (input0, 1, 26, 0)
+mul z y (input0, 1, 26, 0)
+mul y 0 (input0, 1, 0, 0)
+add y w (input0, 1, input0, 0)
+add y 3 (input0, 1, input0+3, 0)
+mul y x  (input0, 1, input0+3, 0)
+add z y  (input0, 1, input0+3, input0+3)
+
+inp w (input1, 1, in0+3, in0+3)
+mul x 0 (input1, 0, in0+3, in0+3)
+add x z (input1, in0 + 3, in0+3, in0+3)
+mod x 26 (input1, in0 + 3, in0+3, in0+3)
+div z 1  (input1, in0 + 3, in0+3, in0+3)
+add x 14 (in1, in0 + 17, in0+3, in0+3)
+eql x w (in1, 0, in0+3, in0+3)
+eql x 0 (in1, 1, in0+3, in0+3)
+mul y 0 (in1, 1, 0, in0+3)
+add y 25 (in1, 1, 25, in0+3)
+mul y x (in1, 1, 25, in0+3)
+add y 1 (in1, 1, 26, in0+3)
+mul z y (in1, 1, 26, 26 * (in0+3))
+mul y 0 (in1, 1, 0, 26 * (in0+3))
+add y w (in1, 1, in1, 26 * (in0+3))
+add y 7 (in1, 1, in1+7, 26 * (in0+3))
+mul y x (in1, 1, in1+7, 26 * (in0+3))
+add z y (in1, 1, in1+7, in1+7 + 26 * (in0+3))
+
+inp w (in2, 1, in1+7, in1+7 + 26 * (in0+3))
+mul x 0 (in2, 0, in1+7, in1+7 + 26 * (in0+3))
+add x z (in2, 0, in1+7, in1+7 + 26 * (in0+3))
+mod x 26 (in2, 0, in1+7, in1+7 + 26 * (in0+3))
+div z 1 (in2, 0, in1+7, in1+7 + 26 * (in0+3))
+add x 13 (in2, 13, in1+7, in1+7 + 26 * (in0+3))
+eql x w (in2, 0, in1+7, in1+7 + 26 * (in0+3))
+eql x 0 (in2, 1, in1+7, in1+7 + 26 * (in0+3))
+mul y 0 (in2, 1, 0, in1+7 + 26 * (in0+3))
+add y 25 (in2, 1, 25, in1+7 + 26 * (in0+3))
+mul y x (in2, 1, 25, in1+7 + 26 * (in0+3))
+add y 1 (in2, 1, 26, in1+7 + 26 * (in0+3))
+mul z y (in2, 1, 26, 26 * (in1+7 + 26 * (in0+3)))
+mul y 0 (in2, 1, 0, 26 * (in1+7 + 26 * (in0+3)))
+add y w (in2, 1, in2, 26 * (in1+7 + 26 * (in0+3)))
+add y 1 (in2, 1, in2+1, 26 * (in1+7 + 26 * (in0+3)))
+mul y x (in2, 1, in2+1, 26 * (in1+7 + 26 * (in0+3)))
+add z y (in2, 1, in2+1, in2+1 + 26 * (in1+7 + 26 * (in0+3)))
+
+inp w (in3, 1, in2+1, in2+1 + 26 * (in1+7 + 26 * (in0+3)))
+mul x 0 (in3, 0, in2+1, in2+1 + 26 * (in1+7 + 26 * (in0+3)))
+add x z  (in3, in2+1 + 26 * (in1+7 + 26 * (in0+3)), in2+1, in2+1 + 26 * (in1+7 + 26 * (in0+3)))
+mod x 26  (in3, in2+1, in2+1, in2+1 + 26 * (in1+7 + 26 * (in0+3)))
+div z 26  (in3, in2+1, in2+1, in1+7 + 26 * (in0+3))
+add x -4  (in3, in2-3, in2+1, in1+7 + 26 * (in0+3))
+
+Cas in3 == in2-3
+eql x w  (in3, 1, in2+1, in1+7 + 26 * (in0+3))
+eql x 0  (in3, 0, in2+1, in1+7 + 26 * (in0+3))
+mul y 0 (in3, 0, 0, in1+7 + 26 * (in0+3))
+add y 25 (in3, 0, 25, in1+7 + 26 * (in0+3))
+mul y x  (in3, 0, 25, in1+7 + 26 * (in0+3))
+add y 1  (in3, 0, 26, in1+7 + 26 * (in0+3))
+mul z y  (in3, 0, 26, 26 * (in1+7 + 26 * (in0+3)))
+mul y 0  (in3, 0, 0, 26 * (in1+7 + 26 * (in0+3)))
+add y w  (in3, 0, in3, 26 * (in1+7 + 26 * (in0+3)))
+add y 6  (in3, 0, in3+6, 26 * (in1+7 + 26 * (in0+3)))
+mul y x (in3, 0, 0, 26 * (in1+7 + 26 * (in0+3)))
+add z y (in3, 0, 0, 26 * (in1+7 + 26 * (in0+3)))
+
+(in3, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+------
+
+inp w (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul x 0 (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add x z (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mod x 26 (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+div z 1 (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add x 11 (in4, 11, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+eql x w (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+eql x 0 (in4, 1, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y 0  (in4, 1, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y 25  (in4, 0, 25, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y x  (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y 1  (in4, 0, 1, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul z y  (in4, 0, 1, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y 0  (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y w  (in4, 0, in4, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y 14 (in4, 0, in4 + 14, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y x (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add z y (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+
+... (in4, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+
+inp w (in5, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul x 0 (in5, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add x z (in5, 26 * (in1+7 + 26 * (in0+3)), 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mod x 26  (in5, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add x 10 (in5, 10, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+eql x w (in5, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+eql x 0 (in5, 1, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y 0 (in5, 1, 0, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y 25 (in5, 1, 25, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y x (in5, 1, 25, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y 1 (in5, 1, 26, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul z y (in5, 1, 26, 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y 0 (in5, 1, 0, 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y w (in5, 1, in5, 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add y 7 (in5, 1, in5+7, 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul y x (in5, 1, in5+7, 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add z y (in5, 1, in5+7, in5+7 + 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+
+inp w  (in6, 1, in5+7, in5+7 + 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mul x 0 (in6, 0, in5+7, in5+7 + 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add x z (in6, in5+7 + 26 * 26 * (in1+7 + 26 * (in0+3)), in5+7, in5+7 + 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+mod x 26 (in6, in5+7, in5+7, in5+7 + 26 * 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+div z 26 (in6, in5+7, in5+7, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+add x -4 (in6, in5+3, in5+7, 26 * (in1+7 + 26 * (in0+3))) || in3 == in2-3
+eql x w (in6, 1, in5+7, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6 *******
+eql x 0 (in6, 0, in5+7, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+mul y 0 (in6, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+add y 25 (in6, 0, 25, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+mul y x (in6, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+add y 1 (in6, 0, 1, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+mul z y (in6, 0, 1, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+mul y 0 (in6, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+add y w (in6, 0, in6, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+add y 9 (in6, 0, in6+9, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+mul y x (in6, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+add z y (in6, 0, 0, 26 * (in1+7 + 26 * (in0+3))) || (in3 == in2-3) && in5+3 == in6
+
+inp w (w0, x0, y0, z0)
+mul x 0 (w0, 0, y0, z0)
+add x z (w0, z0, y0, z0)
+mod x 26 (w0, z0 mod 26, y0, z0)
+div z 26 (w0, z0 mod 26, y0, z0 / 26)
+add x -12 ((w0, z0 mod 26) - 12, y0, z0 / 26)
+eql x w
+
+Case 1:
+  eql x 0 (w0, 0, y0, z0 / 26)
+  mul y 0  (w0, 0, 0, z0 / 26)
+  add y 25  (w0, 0, 25, z0 / 26)
+  mul y x  (w0, 0, 0, z0 / 26)
+  add y 1  (w0, 0, 1, z0 / 26)
+  mul z y  (w0, 0, 1, z0 / 26)
+  mul y 0  (w0, 0, 0, z0 / 26)
+  add y w  (w0, 0, w0, z0 / 26)
+  add y 9  (w0, 0, w0+9, z0 / 26)
+  mul y x (w0, 0, 0, z0 / 26)
+  add z y (w0, 0, 0, z0 / 26)
+
+Case 0
+  eql x 0
+  mul y 0
+  add y 25
+  mul y x
+  add y 1
+  mul z y
+  mul y 0
+  add y w
+  add y 9
+  mul y x
+  add z y
+
+---
+
+inp w (w0, x0, y0, z0)
+mul x 0 (w0, 0, y0, z0)
+add x z (w0, z0, y0, z0)
+mod x 26 (w0, z0 mod 26, y0, z0)
+add x 10  (w0, (z0 mod 26) + 10, y0, z0)
+eql x w  (w0, 0, y0, z0)
+eql x 0 (w0, 1, y0, z0)
+mul y 0 (w0, 1, 0, z0)
+add y 25 (w0, 1, 25, z0)
+mul y x (w0, 1, 25, z0)
+add y 1  (w0, 1, 26, z0)
+mul z y  (w0, 1, 26, z0*26)
+mul y 0 (w0, 1, 0, z0*26)
+add y w (w0, 1, w0, z0*26)
+add y 6  (w0, 1, w0+6, z0*26)
+mul y x  (w0, 1, w0+6, z0*26)
+add z y  (w0, 1, w0+6, (w0+6)*(z0*26))
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -11
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y
+
+---
+
+inp w (in11, x0, y0, z0)
+mul x 0 (in11, 0, y0, z0)
+add x z (in11, z0, y0, z0)
+mod x 26 (in11, z0 mod 26, y0, z0)
+add x 12 (in11, (z0 mod 26)+12, y0, z0)
+eql x w
+Case 1: (z0 mod 26)+12 == in11
+  eql x 0 (in11, 0, y0, z0)
+  mul y 0 (in11, 0, 0, z0)
+  add y 25  (in11, 0, 25, z0)
+  mul y x  (in11, 0, 0, z0)
+  add y 1  (in11, 0, 1, z0)
+  mul z y  (in11, 0, 1, z0)
+  mul y 0  (in11, 0, 0, z0)
+  add y w  (in11, 0, in11, z0)
+  add y 0 (in11, 0, in11, z0)
+  mul y x (in11, 0, 0, z0)
+  add z y (in11, 0, 0, z0)
+
+Case 0:
+  eql x 0
+  mul y 0
+  add y 25
+  mul y x
+  add y 1
+  mul z y
+  mul y 0
+  add y w
+  add y 0
+  mul y x
+  add z y
+
+
+---
+inp w (in12, x0, y0, z0)
+mul x 0 (in12, 0, y0, z0)
+add x z (in12, z, y0, z0)
+mod x 26 (in12, z mod 26, y0, z0)
+div z 26 (in12, z mod 26, y0, z0 / 26)
+add x -1 (in12, (z mod 26) - 1, y0, z0 / 26)
+eql x w (in12, 0 || 1, y0, z0 / 26)
+
+Case 1: (z mod 26) - 1 == input 12
+  eql x 0 (in12, 0, y0, z0 / 26)
+  mul y 0 (in12, 0, 0, z0 / 26)
+  add y 25 (in12, 0, 25, z0 / 26)
+  mul y x (in12, 0, 0, z0 / 26)
+  add y 1 (in12, 0, 1, z0 / 26)
+  mul z y (in12, 0, 1, z0 / 26)
+  mul y 0 (in12, 0, 0, z0 / 26)
+  add y w (in12, 0, in12, z0 / 26)
+  add y 7 (in12, 0, in12+7, z0 / 26)
+  mul y x (in12, 0, 0, z0/26)
+  add z y (in12, 0, 0, z0/26)
+
+Case 0: (z mod 26) - 1 != input 12
+  eql x 0
+  mul y 0
+  add y 25
+  mul y x
+  add y 1
+  mul z y
+  mul y 0
+  add y w
+  add y 7
+  mul y x
+  add z y
+
+---
+
+inp w (in13, x0, y0, z0)
+mul x 0 (in13, 0, y0, z0)
+add x z (in13, z0, y0, z0)
+mod x 26 (in13, z0 mod 26, y0, z0)
+div z 26 (in13, z0 mod 26, y0, z0/26)
+eql x w (in13, z0 mod 26, y0, z0/26)
+
+Case z0 mod 26 != 0
+eql x 0 (in13, 1, y0, z0/26)
+mul y 0 (in13, 1, 0, z0/26)
+add y 25 (in13, 1, 25, z0/26)
+mul y x (in13, 1, 25, z0/26)
+add y 1 (in13, 1, 26, z0/26)
+mul z y (in13, 1, 26, 26 * (z0/26))
+mul y 0 (in13, 1, 0, 26 * (z0/26))
+add y w (in13, 1, in13, 26 * (z0/26))
+add y 12 (in13, 1, in13+12, 26 * (z0/26))
+mul y x  (in13, 1, in13+12, 26 * (z0/26))
+add z y  (in13, 1, in13+12, in13+12+26 * (z0/26))
+
+Case z0 mod 26 == 0
+eql x 0 (in13, 0, y0, z0/26)
+mul y 0 (in13, 0, 0, z0/26)
+mul y x (in13, 0, 0, z0/26)
+add y 1 (in13, 0, 1, z0/26)
+mul z y (in13, 0, 1, z0/26)
+mul y 0 (in13, 0, 0, z0/26)
+add y w (in13, 0, in13, z0/26)
+add y 12  (in13, 0, in13+12, z0/26)
+mul y x (in13, 0, 0, z0/26)
+add z y (in13, 0, 0, z0/26)
+---
+
+
+inp w (inp13, x, y, z)
+mul x 0 (inp13, 0, y, z)
+add x z (inp13, z, y, z)
+mod x 26  (inp13, z mod 26, y, z)
+div z 26 (inp13, z mod 26, y, z / 26)
+add x -11 (inp13, (z mod 26) - 11, y, z)
+
+
+z mod 26 = 12..25 -> w=1..14
+... Case z mod 26 - 11 = w
+    eql x w (inp13, 1, y, z)
+    eql x 0 (inp13, 0, y, z)
+    mul y 0 (inp13, 0, 0, z)
+    add y 25 (inp13, 0, 25, z)
+    mul y x (inp13, 0, 0, z)
+    add y 1 (inp13, 0, 1, z)
+    mul z y (inp13, 0, 1, z)
+    mul y 0  (inp13, 0, 0, z)
+    add y w  (inp13, 0, inp13, z)
+    add y 1 (inp13, 0, inp13+1, z)
+    mul y x (inp13, 0, 0, z)
+    add z y (inp13, 0, 0, z)
+
+... Case z mod 26 - 11 != w
+    eql x w (inp13, 0, y, z)
+    eql x 0 (inp13, 1, y, z)
+    mul y 0 (inp13, 1, 0, z)
+    add y 25 (inp13, 1, 25, z)
+    mul y x (inp13, 1, 25, z)
+    add y 1 (inp13, 1, 26, z)
+    mul z y (inp13, 1, 26, z*26)
+    mul y 0 (inp13, 1, 0, z*26)
+    add y w (inp13, 1, inp13, z*26)
+    add y 1 (inp13, 1, inp13+1, z*26)
+    mul y x (inp13, 1, inp13+1, z*26)
+    add z y (inp13, 1, inp13+1, z*26 + inp13+1)

@@ -1,0 +1,89 @@
+Step 0:
+(w0, 1, w0+3, w0+3)
+
+Step 1:
+(w1, 1, 26, z0 * 26 + w1 + 7)
+
+
+Step 2:
+(w2, 1, 26, z2=z1*26 + w2 + 1)
+
+Step 3:
+
+if z2 mod 26 - 4 == w3
+then
+  (w3, 0, 0, z3 = z2 / 26)
+else
+  (w3, 1, 0, z3 = w3 + 6 + 26 * (z2 / 26))
+
+
+Step 4:
+z4 =  w4 + 14 + 26 * z3
+
+Step 5:
+z5 = w5 + 1 + 26 * z4
+
+
+Step 6:
+(w6, z5 mod 26 - 4, 0, z5/26)
+
+if z5 mod 26 - 4 == w6
+then
+  z6 = (z5 / 26)
+else
+  z6 = (w6 + 9 + 26 * (z5/26))
+
+
+Step 7:
+(w7, z6 mod 26 - 12 , z6/26)
+if z6 mod 26 - 12 == w7
+then
+  z7 = (z6/26)
+else
+  z7 = w7 + 9 +26 * (z6/26)
+
+Step 8
+z8 = w8 + 6 + 26 * z7
+
+
+Step 9:
+
+
+if z8 mod 26 -11 == w9
+then
+  z9 = (z8/26)
+else
+  z9 = w9 + 4 +  26 * (z8 / 26)
+
+
+Step 10:
+
+z10 =  w10 + 26 * z9
+
+Step 11
+
+if z10 mod 26 - 1 == w10
+then
+  z11 = z10 / 26
+else
+  z11 = w11 + 7 + 26 * (z10 / 26)
+
+
+Step 12
+
+
+if z11 mod 26 == w12
+then
+  z12 = z11/26
+else
+  z12 = w12 + 12 + 26 * (z11 / 26)
+
+
+Step 13
+-------
+
+if z12 mod 26 - 11 == w13
+then
+  (z12 / 26)
+else
+  w13 + 1 + 26 * (z12 / 26)
