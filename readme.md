@@ -1,5 +1,13 @@
 # Code for solving the [Advent of Code](https://adventofcode.com/)
 
-Ocaml / Python notebooks code
+Since 2019.
+
+Programming languages:
+
+- Ocaml
+- Python (3, notebooks)
+
+
+
 
 
