@@ -5,7 +5,7 @@ Since 2019.
 Programming languages:
 
 - Ocaml
-- Python (3, notebooks)
+- Python3 (notebooks and scripts, may use `numpy`)
 
 
 
